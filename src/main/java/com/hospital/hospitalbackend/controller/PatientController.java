@@ -11,11 +11,12 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.CrossOrigin;
 import com.hospital.hospitalbackend.model.Patient;
 import com.hospital.hospitalbackend.service.PatientService;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/patients")
 public class PatientController {
 
