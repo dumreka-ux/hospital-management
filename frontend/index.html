@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hospital Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="sidebar">
+
+        <h2>🏥 Hospital</h2>
+
+        <button onclick="showSection('patientSection')">
+            Patients
+        </button>
+
+        <button onclick="showSection('billingSection')">
+            Billing
+        </button>
+
+        <button onclick="showSection('pharmacySection')">
+            Pharmacy
+        </button>
+
+        <button onclick="showSection('radiologySection')">
+            Radiology
+        </button>
+
+    </div>
+
+    <div class="main">
+
+        <h1>Hospital Management Dashboard</h1>
+
+        <!-- PATIENT -->
+
+        <div id="patientSection" class="section">
+
+            <h2>Patient Management</h2>
+
+            <input type="number"
+                   id="patientId"
+                   placeholder="Patient ID">
+
+            <input type="text"
+                   id="name"
+                   placeholder="Patient Name">
+
+            <input type="text"
+                   id="patientType"
+                   placeholder="Patient Type">
+
+            <input type="text"
+                   id="status"
+                   placeholder="Status">
+
+            <button onclick="addPatient()">
+                Add Patient
+            </button>
+
+            <table>
+
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+
+                <tbody id="patientTable">
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <!-- BILLING -->
+
+        <div id="billingSection"
+             class="section"
+             style="display:none;">
+
+            <h2>Billing</h2>
+
+            <input type="text"
+                   id="billType"
+                   placeholder="Patient Type">
+
+            <input type="number"
+                   id="days"
+                   placeholder="Days Stayed">
+
+            <input type="number"
+                   id="medicineCost"
+                   placeholder="Medicine Cost">
+
+            <button onclick="calculateBill()">
+                Calculate Bill
+            </button>
+
+            <h3 id="billResult"></h3>
+
+        </div>
+
+        <!-- PHARMACY -->
+
+<div id="pharmacySection"
+     class="section"
+     style="display:none;">
+
+    <h2>Pharmacy</h2>
+
+    <div id="medicineContainer">
+
+        <div class="medicineRow">
+
+            <input type="text"
+                   placeholder="Medicine Name"
+                   class="medName">
+
+            <input type="number"
+                   placeholder="Quantity"
+                   class="medQty">
+
+            <input type="number"
+                   placeholder="Price"
+                   class="medPrice">
+
+        </div>
+
+    </div>
+
+    <button onclick="addMedicineRow()">
+        + Add Medicine
+    </button>
+
+    <button onclick="calculateMedicineTotal()">
+        Calculate Total
+    </button>
+
+    <h3 id="pharmacyResult"></h3>
+
+</div>
+
+        <!-- RADIOLOGY -->
+
+        <div id="radiologySection"
+             class="section"
+             style="display:none;">
+
+            <h2>Radiology</h2>
+
+            <input type="text"
+                   id="testName"
+                   placeholder="Test Name">
+
+            <button onclick="generateReport()">
+                Generate Report
+            </button>
+
+            <h3 id="radiologyResult"></h3>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
